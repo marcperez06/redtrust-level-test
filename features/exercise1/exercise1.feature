@@ -1,4 +1,4 @@
-Feature: Exercise 1, some verifications for use of red trust agent
+Feature: Exercise 1, some verifications for use of redtrust agent
 	
 	This feature try to solve the exercise 1 of level test, using a Gherkin language.
 	
@@ -9,10 +9,10 @@ Feature: Exercise 1, some verifications for use of red trust agent
 	
 	Sorry for the urls used, I'm not use certificates when navigate for internet. 
 	
-	Scenario Outline: Verify correct functionality of policy in Red Trust Agent
-		Given an user <user> with access to Red Trust Agent
+	Scenario Outline: Verify correct functionality of policy in Redtrust Agent
+		Given an user <user> with access to Redtrust Agent
 		When try to use the certificate <certificate> in the url: <url>
-		Then the Red Trust Server generates a log with the message <message>
+		Then the Redtrust Server generates a log with the message <message>
 		
 		Examples:
 			|  user  | certificate |         url          |              message                 |
@@ -26,13 +26,13 @@ Feature: Exercise 1, some verifications for use of red trust agent
 			| user03 |    cert02   | https://hacienda.com | user03 cannot use certificate cert02 |
 			| user03 |    cert03   | https://hacienda.com | user03 cannot use certificate cert03 |
 	
-	Scenario Outline: Verify correct functionality of policy in Red Trust Agent
+	Scenario Outline: Verify correct functionality of policy in Redtrust Agent (v2)
 		Given an user <user>
-		When try to login in  Red Trust Agent
-		Then the user is loged in Red Trust Agent
+		When try to login in  Redtrust Agent
+		Then the user is loged in Redtrust Agent
 		When navigates to url: <url>
 		And try to use the certificate <certificate>
-		Then the Red Trust server generates a log with the message <message>
+		Then the Redtrust Server generates a log with the message <message>
 		
 		Examples:
 			|  user  | certificate |         url          |              message                 |
