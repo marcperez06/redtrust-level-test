@@ -9,6 +9,7 @@ public class WebDriverCapabilitiesFactory {
 	public static ChromeOptions createChromeOptions() {
 		ArrayList<String> optionsList = new ArrayList<String>();
 		ChromeOptions chromeOptions = new ChromeOptions();
+		chromeOptions.setCapability("browserName", "chrome");
 		//optionsList.add("--window-size=1024,768");
 		optionsList.add("--start-maximized");
 		optionsList.add("--incognito");

@@ -10,7 +10,15 @@ public class HomePageElements extends PageElements {
 	
 	@FindBy(css = HomeLocators.cssInitSesion)
 	protected WebElement initSesion;
+	
+	@FindBy(css = HomeLocators.cssProfileMenu)
+	protected WebElement profileMenu;
+	
+	@FindBy(xpath = HomeLocators.xpathProfileLink)
+	protected WebElement profileLink;
 
-	public HomePageElements() { }
+	public HomePageElements(WebDriver driver) {
+		super(driver);
+	}
 	
 }

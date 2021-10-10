@@ -6,8 +6,8 @@ public class WebDriverPropertiesManager {
 
 	private WebDriverPropertiesManager() {}
 	
-	public static void setChromeDriverProperty(String...driverPath) {
-		System.setProperty(CHROME_PROPERTY, driverPath[0]);
+	public static void setChromeDriverProperty(String driverPath) {
+		System.setProperty(CHROME_PROPERTY, driverPath);
 	}
 
 }

@@ -5,12 +5,15 @@ Feature: Exercise 2, Some Frontend test
 	For the authorization for spotify api, I assume that user and token are stored in a file
 	
 	Scenario: Verify profile user on Spotify Webpage
-		Given a valid user for Spotify
-		When access to profile page
+		Given a valid user for Spotify webpage
+		When accept cookies
+		And close all advertisements
+		And change the url for Spotify webpage
+		And access to profile page
 		Then verify that email is "marc.perez.rodriguez.redtrust@gmail.com"
 		
 	Scenario Outline: Exploratory Testing of all the links in a webpage
-		Given a webpage <url>
+		Given a webpage "<url>"
 		When get all the links
 		Then verify that each link returns the status code 200
 		

@@ -17,8 +17,8 @@ public class HomePage extends Page {
 	
 	private void initializePage() {
         WebDriverManager.addWebDriver(this.driver);
-        this.elements = new HomePageElements();
-        this.elements.initElements(this.driver);
+        this.elements = new HomePageElements(this.driver);
+        this.elements.initElements();
         this.actions = new HomePageActions(this.elements);
     }
 

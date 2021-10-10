@@ -14,7 +14,9 @@ public class WebDriverManager {
 	
 	public static void addWebDriver(WebDriver driver) {
 		Long key = getKey();
-		driversMap.put(key, driver);
+		if (!driversMap.containsKey(key)) {
+			driversMap.put(key, driver);	
+		}
 	}
 
 	private static Long getKey() {

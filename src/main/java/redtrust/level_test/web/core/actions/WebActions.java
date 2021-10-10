@@ -1,5 +1,7 @@
 package redtrust.level_test.web.core.actions;
 
+import java.util.List;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.StaleElementReferenceException;
 import org.openqa.selenium.WebDriver;
@@ -249,6 +251,18 @@ public class WebActions {
 	
 	public static String getOuterHtml(WebElement element) {
 		return getAttribute(element, "outerHTML");
+	}
+	
+	public static WebElement searchElement(By locator) {
+		WebDriver driver = WebDriverManager.getDriver();
+		WebElement child = driver.findElement(locator);
+		return child;
+	}
+	
+	public static List<WebElement> searchElements(By locator) {
+		WebDriver driver = WebDriverManager.getDriver();
+		List<WebElement> childs = driver.findElements(locator);
+		return childs;
 	}
 
 }

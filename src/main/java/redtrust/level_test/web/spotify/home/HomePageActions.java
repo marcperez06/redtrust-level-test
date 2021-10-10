@@ -26,5 +26,23 @@ public class HomePageActions {
     	WebElement waitElement = this.wait.until(ExpectedConditions.visibilityOf(this.elements.initSesion));
     	return WebActions.clickOn(waitElement);
     }
+    
+    public boolean openProfile() {
+    	boolean openProfile = false;
+    	if (this.expandProfileMenu()) {
+    		openProfile = this.clickProfileLink();
+    	}
+    	return openProfile;
+    }
+    
+    private boolean expandProfileMenu() {
+    	WebElement waitElement = this.wait.until(ExpectedConditions.visibilityOf(this.elements.profileMenu));
+    	return WebActions.clickOn(waitElement);
+    }
+    
+    private boolean clickProfileLink() {
+    	WebElement waitElement = this.wait.until(ExpectedConditions.visibilityOf(this.elements.profileLink));
+    	return WebActions.clickOn(waitElement);
+    }
 
 }
