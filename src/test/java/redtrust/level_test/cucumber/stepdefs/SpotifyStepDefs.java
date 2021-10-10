@@ -3,7 +3,6 @@ package redtrust.level_test.cucumber.stepdefs;
 import org.junit.Assert;
 import org.openqa.selenium.WebDriver;
 
-import io.cucumber.java.After;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
@@ -70,12 +69,8 @@ public class SpotifyStepDefs {
 	public void verify_that_email_is(String email) {
 	    this.profilePage = new ProfilePage(this.globalDriver);
 	    String currentEmail = this.profilePage.actions.getEmailText();
+	    this.profilePage.exit();
 	    Assert.assertEquals("The emails are not equals", currentEmail, email);
-	}
-	
-	@After
-	private void after() {
-		this.profilePage.exit();
 	}
 	
 }
