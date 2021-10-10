@@ -7,9 +7,9 @@ import io.cucumber.junit.CucumberOptions;
 
 @RunWith(Cucumber.class)
 @CucumberOptions(
-				plugin = { "pretty", "json:report/Cucumber_report.json", "html:reports/Cucumber_report.html" }, 
-				glue = { "cucumber.stepdefs" }, 
-				features = { "features/exercice2" })
+				plugin = { "pretty", "json:report/Cucumber_report.json", "html:report/Cucumber_report.html" }, 
+				glue = { "redtrust.level_test.cucumber.stepdefs" }, 
+				features = { "features/exercise2" })
 
 public class TestRunner {
 

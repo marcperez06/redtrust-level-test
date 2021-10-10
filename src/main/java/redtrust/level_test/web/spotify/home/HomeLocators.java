@@ -1,0 +1,7 @@
+package redtrust.level_test.web.spotify.home;
+
+public class HomeLocators {
+
+	public static final String cssInitSesion = "a[data-ga-action='log-in']";
+	
+}
