@@ -69,7 +69,6 @@ public class SpotifyStepDefs {
 	public void verify_that_email_is(String email) {
 	    this.profilePage = new ProfilePage(this.globalDriver);
 	    String currentEmail = this.profilePage.actions.getEmailText();
-	    this.profilePage.exit();
 	    Assert.assertEquals("The emails are not equals", currentEmail, email);
 	}
 	

@@ -25,6 +25,7 @@ import io.github.marcperez06.java_utilities.logger.Logger;
 import io.github.marcperez06.java_utilities.validation.ValidationUtils;
 import redtrust.level_test.web.core.actions.WebActions;
 import redtrust.level_test.web.core.driver.WebDriverFactory;
+import redtrust.level_test.web.core.driver.WebDriverManager;
 
 public class LinkCheckerStepDefs {
 	
@@ -37,6 +38,7 @@ public class LinkCheckerStepDefs {
 	@Given("a webpage {string}")
 	public void a_webpage(String webpage) {
 		this.globalDriver = WebDriverFactory.createDriver();
+		WebDriverManager.addWebDriver(this.globalDriver);
 	    this.globalDriver.get(webpage);
 	    this.rest = new UnirestClient();
 	}
@@ -77,14 +79,7 @@ public class LinkCheckerStepDefs {
 	    	System.out.println("Url: " + entry.getKey() + " --> Status: " + entry.getValue());
 	    }
 	    
-	    this.closeBrowser();
-	    
 	    Assert.assertTrue("Exist " + this.linksFailed.size() + " links that fails", this.linksFailed.isEmpty());
-	}
-	
-	private void closeBrowser() {
-		this.globalDriver.close();
-		this.globalDriver.quit();
 	}
 
 }

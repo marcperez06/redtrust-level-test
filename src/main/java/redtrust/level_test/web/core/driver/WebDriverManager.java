@@ -53,5 +53,14 @@ public class WebDriverManager {
 		}
 		return wait;
 	}
+	
+	public static void exit() {
+		Long key = getKey();
+		WebDriver driver = getDriver();
+		if (driver != null) {
+			driver.close();
+			driversMap.remove(key);	
+		}
+	}
 
 }
